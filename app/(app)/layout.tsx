@@ -1,3 +1,7 @@
+"use client"
+import { useEffect, useState } from "react"
+import { supabase } from "@/lib/supabase"
+import { useRouter } from "next/navigation"
 import Link from "next/link"
 
 export default function AppLayout({
@@ -5,6 +9,25 @@ export default function AppLayout({
 }: {
   children: React.ReactNode
 }) {
+  const router = useRouter
+  const [Loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const checkUser = async () => {
+      const { data } = await supabase.auth.getUser()
+
+      if(!data.user) {
+        router.push("/login")
+      } else {
+        setLoading(false)
+      }
+    }
+
+    checkUser()
+  }, [router])
+
+if (Loading) return <div className="p-4">Loading...</div>
+
   return (
     <div className="min-h-screen pb-16">
       <main className="p-4">{children}</main>
