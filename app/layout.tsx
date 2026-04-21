@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, DM_Sans } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
-});
+  variable: "--font-inter",
+})
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const dmSans = DM_Sans({
+  variable: "--font-body",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
   title: "Subtrax",
-  description: "Design your day by subtracting the disorders..",
+  description: "Structure your day intentionally by subtracting disorders..",
 };
 
 export default function RootLayout({
@@ -23,8 +23,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en"
+     className={'${inter.variable} ${dmSans.variable}'}
+    >
+      <body className={'${inter.variable font-sans'}>{children}</body>
     </html>
   );
 }
