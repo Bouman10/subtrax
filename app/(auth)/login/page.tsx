@@ -1,17 +1,21 @@
+import AuthLayout from "@/components/auth/AuthLayout"
 import LoginForm from "@/components/auth/LoginForm"
 import Link from "next/link"
 
 export default function Page() {
   return (
-    <div className="space-y-4 text-center">
-      <LoginForm />
+    <AuthLayout
+      title="Welcome back"
+      subtitle="Continue your daily system.."
+      >
+        <LoginForm />
 
-      <p className="text-sm text-gray-500">
-        New user?{" "}
-        <Link href="/signup" className="underline">
-          Sign up
-        </Link>
-      </p>
-    </div>
+        <p className="text-sm text-center text-muted">
+            New user?{" "}
+            <Link href="/signup" className="text-primary font-medium">
+              Sign up
+            </Link>
+        </p>
+      </AuthLayout>
   )
 }

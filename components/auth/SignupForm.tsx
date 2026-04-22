@@ -19,19 +19,19 @@ export default function SignupForm() {
     }
 
     return (
-        <div className="space-y-3 w-72">
+        <div className="space-y-4">
             <input
-              className="border p-2 w-full"
+              className="w-full border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-accent"
               placeholder="Email"
               onChange={(e) => setEmail(e.target.value)}
             />
             <input
-              className="border p-2 w-full"
+              className="w-full border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-accent"
               type="password"
               placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button onClick={signUp} className="bg-black text-whitenp-2 w-full">
+            <button onClick={signUp} className="w-full bg-primary text-white py-3 rounded-lg font-medium hover:opacity-90 transition">
                 Sign up
             </button>
         </div>
