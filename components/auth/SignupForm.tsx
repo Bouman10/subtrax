@@ -14,7 +14,7 @@ export default function SignupForm() {
             password,
         })
 
-        if (!error) router.push("/onboarding")
+        if (!error) router.push("/onboarding/step-1")
             else alert(error.message)
     }
 

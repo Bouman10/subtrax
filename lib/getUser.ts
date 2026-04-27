@@ -1,6 +1,6 @@
 import { supabase } from "./supabase";
 
-export async function getUser() {
+export async function getUserId() {
     const { data } = await supabase.auth.getUser()
-    return data.user
+    return data.user?.id
 }

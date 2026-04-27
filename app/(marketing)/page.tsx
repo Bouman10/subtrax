@@ -24,7 +24,7 @@ export default function LandingPage() {
         <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
           <Link
             href="/signup"
-            className="bg-white text-black px-6 py-4 rounded-xl font-medium hover:scale-105 transition"
+            className="bg-black text-white px-6 py-4 rounded-xl font-medium hover:scale-105 transition"
           >
             Start free
           </Link>
